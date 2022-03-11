@@ -13,8 +13,8 @@ checkNumber(0,B,C) ->
 checkNumber(_,0,C) ->
   checkNumber(C-3, C-2 , C-1);
 checkNumber(A,B,C) ->
-  IscCrrect = isIt(A,B,C),
-  if IscCrrect ->
+  IsCorrect = isIt(A,B,C),
+  if IsCorrect ->
     io:fwrite("~w\n", [A*B*C]);
     true -> checkNumber(A-1, B, C)
   end.
