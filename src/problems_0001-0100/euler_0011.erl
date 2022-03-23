@@ -6,8 +6,8 @@
 
 run() ->
   Tab = getTable(),
-  Dupa = checkAllHorizontalLines(Tab),
-  io:fwrite("~w\n", [Dupa]).
+  io:fwrite("~w\n", [checkVertical(Tab)]),
+  io:fwrite("~w\n", [checkAllHorizontalLines(Tab)]).
 
 
 returnProduct(Four) ->
@@ -21,6 +21,11 @@ returnProduct([H|T], Product) ->
 %%%%%%%%%%%%%%%%   DIAGONAL REVERSE   %%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%   VERTICAL   %%%%%%%%%%%%%%%%
 
+checkVertical(Tab) ->
+  checkAllHorizontalLines(transpose(Tab)).
+transpose([[]|_]) -> [];
+transpose(M) ->
+  [lists:map(fun hd/1, M) | transpose(lists:map(fun tl/1, M))].
 
 
 
