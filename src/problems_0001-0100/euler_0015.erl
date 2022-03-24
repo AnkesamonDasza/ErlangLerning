@@ -7,7 +7,6 @@
 run() ->
   X=20,
   Y=20,
-%%  Val = pascal(X*2,Y),
   Val = newton(X*2,Y),
   io:fwrite("~w\n", [Val]).
 

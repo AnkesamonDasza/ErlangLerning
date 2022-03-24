@@ -1,3 +1,4 @@
+
 -module(euler_0001).
 -author("HEX").
 
